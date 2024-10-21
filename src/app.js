@@ -23,11 +23,10 @@ window.onload = function() {
 
 function sentencesCreator(arr1, arr2, arr3, arr4) {
   let arr = [arr1, arr2, arr3, arr4];
-  let positions = [4, 4, 3, 5];
   let sentence = "";
   for (let i in arr) {
     sentence =
-      sentence + arr[i][Math.floor(Math.random() * positions[i])] + " ";
+      sentence + arr[i][Math.floor(Math.random() * arr[i].length)] + " ";
   }
   return sentence;
 }
