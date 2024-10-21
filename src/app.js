@@ -16,6 +16,7 @@ window.onload = function() {
     "during my lunch",
     "while I was praying"
   ];
+
   let paragraph = document.getElementById("excuse");
   paragraph.innerText = sentencesCreator(who, action, what, when);
 };
@@ -24,10 +25,9 @@ function sentencesCreator(arr1, arr2, arr3, arr4) {
   let arr = [arr1, arr2, arr3, arr4];
   let positions = [4, 4, 3, 5];
   let sentence = "";
-  for (let i = 0; i < 4; i++) {
+  for (let i in arr) {
     sentence =
       sentence + arr[i][Math.floor(Math.random() * positions[i])] + " ";
   }
-
   return sentence;
 }
