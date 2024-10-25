@@ -17,16 +17,18 @@ window.onload = function() {
     "while I was praying"
   ];
 
-  let paragraph = document.getElementById("excuse");
-  paragraph.innerText = sentencesCreator(who, action, what, when);
+  let arrSenteces = [who, action, what, when];
+  let paragraph = document.querySelector("#excuse");
+  paragraph.innerText = sentencesCreator(arrSenteces);
 };
 
-function sentencesCreator(arr1, arr2, arr3, arr4) {
-  let arr = [arr1, arr2, arr3, arr4];
+function sentencesCreator(arrSenteces) {
   let sentence = "";
-  for (let i in arr) {
+  for (let i in arrSenteces) {
     sentence =
-      sentence + arr[i][Math.floor(Math.random() * arr[i].length)] + " ";
+      sentence +
+      arrSenteces[i][Math.floor(Math.random() * arrSenteces[i].length)] +
+      " ";
   }
   return sentence;
 }
